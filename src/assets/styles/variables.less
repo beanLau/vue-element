@@ -1,0 +1,231 @@
+@blue-color: #1890FF;
+@main-color: #333;
+@normal-color: #666;
+@assist-color: #999;
+@green-color: #30B08F;
+@red-color: #F56C6C;
+@border-color: #d8d8d8;
+@bg-color: #fafafa;
+
+// main每个块的 边框
+.group-wrap-style {
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 12px;
+}
+// main 左右侧样式
+.group-wrap-left {
+  .group-wrap-style;
+  position: absolute;
+  top: 50px;
+  bottom: 16px;
+  width: 246px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.group-wrap-right {
+  .group-wrap-style;
+  position: absolute;
+  top: 50px;
+  bottom: 16px;
+  right: 16px;
+  left: 0;
+  margin-left: 286px;
+  overflow: auto;
+}
+
+.group-wrap-main {
+  .group-wrap-style;
+  position: absolute;
+  top: 50px;
+  bottom: 16px;
+  right: 16px;
+  left: 16px;
+  overflow: auto;
+}
+@media (max-width: 1366px) {
+.group-wrap-left {
+  .group-wrap-style;
+  position: absolute;
+  top: 38px;
+  bottom: 16px;
+  width: 246px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.group-wrap-right {
+  .group-wrap-style;
+  position: absolute;
+  top: 38px;
+  bottom: 16px;
+  right: 16px;
+  left: 0;
+  margin-left: 286px;
+  overflow: auto;
+}
+  .group-wrap-main {
+    .group-wrap-style;
+    position: absolute;
+    top: 38px;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    overflow: auto;
+  }
+}
+//main block title
+.tag-title {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #EBEBEB;
+  font-weight: bold;
+  // &::before {
+  //   content: '';
+  //   display: inline-block;
+  //   width: 4px;
+  //   height: 16px;
+  //   background: #F7AC00;
+  //   margin-right: 10px;
+  // }
+}
+
+// 底部 类似确定 取消按钮
+.btn-box {
+  margin-top: 20px;
+  .save, .cancel {
+    width: 104px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .save {
+    background: @blue-color;
+    color: #fff;
+  }
+  .cancel {
+    background: #F8FCFF;
+    border-color: #7DC1FF;
+    color: @blue-color;
+  }
+  .el-button + .el-button {
+    margin-left: 24px;
+  }
+}
+
+// 所有按钮样式
+.all-btn(@width: 110px, @height: 28px, @bgcolor, @color, @fontsize: 12px, @borderRadius: 4px) {
+  display: inline-block;
+  width: @width;
+  height: @height;
+  text-align: center;
+  line-height: @height;
+  background: @bgcolor;
+  color: @color;
+  font-size: @fontsize;
+  border-radius: @borderRadius;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+// 按钮样式
+.main-btn-style {
+  .all-btn(@bgcolor: #fff, @color: @blue-color);
+  border-color: #7DC1FF;
+  &:active {
+    background: #117CE0;
+  }
+  &:disabled {
+    background: #ECECEC;
+    color: #999;
+  }
+}
+.secondary-btn-style {
+  .all-btn(@bgcolor: @blue-color, @color: #fff);
+}
+
+// 表格按钮修改删除 样式
+.edit,
+.remove {
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+.edit {
+  color: @blue-color;
+  margin-right: 20px;
+}
+.remove {
+  color: @red-color;
+}
+
+//表格
+.tabel-page {
+  // 重置表格样式 begin
+  .el-tabs__content {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    bottom: 0;
+  }
+  .input-with-select {
+    width: 100px;
+  }
+  // 搜索高级搜索begin
+  .advanced-filter {
+    margin-left: 10px;
+    .huashu {
+      background-color: #30b08f;
+    }
+    .el-select {
+      width: 120px;
+    }
+  }
+  // 搜索高级搜索end
+
+  // 表格内容样式begin
+  .tabel-content {
+    overflow: auto;
+  }
+  .flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .highlight {
+    color: #409eff;
+    cursor: pointer;
+  }
+  .table-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .table-btn {
+      color: #666;
+      font-size: 10px;
+      padding: 0 6px;
+      cursor: pointer;
+      i {
+        margin-right: 2px;
+      }
+    }
+  }
+  .ver-bottom {
+    vertical-align: bottom;
+  }
+}
+
+.disable-btn{
+  color: #999;
+  cursor: no-drop;
+}
+
+.form-tip {
+  color: #999;
+  font-size: 10px;
+}
+.custom-width {
+  width: 40px;
+}
